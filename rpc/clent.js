@@ -7,14 +7,20 @@ socket.connect({
 })
 
 
-const data = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-]
-const buffer = Buffer.alloc(1);
+const data = ["123456", "123457", "123458", "123459", "123460", "123461", "123462", "123463", "123464", "123465"]
 
-buffer.writeInt8(~~(Math.random() * data.length), 0);
+socket.on('data', (buffer) => {
+    const seqindex = buffer.slice(0, 2);
+    const titbuffer = buffer.slice(2);
+    console.log(seqindex.readUInt16BE(), titbuffer.toString());
 
-socket.write(buffer)
-socket.on('data',(buffer)=>{
-    console.log(buffer,buffer.toString());
 })
+let seq = 0;
+setInterval(() => {
+    const buffer = Buffer.alloc(6);
+    const index = ~~(Math.random() * data.length);
+    console.log(seq,data[index])
+    buffer.writeInt16BE(seq++);
+    buffer.writeInt32BE(data[index], 2);
+    socket.write(buffer)
+}, 100)

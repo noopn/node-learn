@@ -1,7 +1,5 @@
-const http = require('http');
 const fs = require('fs');
 const express = require('express');
-const { networkInterfaces } = require('os');
 
 // http.createServer(((req, res) => {
 //     res.writeHead(200);
