@@ -1,0 +1,30 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songhua-river/node-learn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/songhua-river/node-learn/issues"
+  },
+  "homepage": "https://github.com/songhua-river/node-learn#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "glob": "^7.1.6"
+  },
+  "dependencies": {
+    "easy_sock": "^0.4.0",
+    "koa": "^2.13.0",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "protocol-buffers": "^4.2.0"
+  }
+}

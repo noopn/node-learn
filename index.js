@@ -1,12 +1,38 @@
-const fs = require('fs');
-console.log(process.argv)
+const mount = require('koa-mount');
+const static = require('koa-static')
+const app = new (require('koa'));
+const rpcClient = require('./client');
+// const template = require('./template');
 
+// const detailTemplate = template(__dirname + '/template/index.html');
 
-let buf = Buffer.alloc(3);
-buf.writeInt8(101, 0);
-// buf.writeInt16BE(200, 1);
-console.log(buf.readInt8(0));
-// <Buffer 65 00 c8> 其中展示的数据均为16进制
+app.use(mount('/static', static(`${__dirname}/source/static/`)))
 
-const cwd = process.cwd();
-console.log(cwd+'/../../')
+// app.use(async (ctx) => {
+//     if (!ctx.query.columnid) {
+//         ctx.status = 400;
+//         ctx.body = 'invalid columnid';
+//         return 
+//     }
+
+//     const result = await new Promise((resolve, reject) => {
+
+//         rpcClient.write({
+//             columnid: ctx.query.columnid
+//         }, function (err, data) {
+//             err ? reject(err) : resolve(data)
+//         })
+//     })
+
+//     ctx.status = 200;
+
+//     // ctx.body = detailTemplate(result);
+// })
+
+// app.listen(3000)
+rpcClient.write({
+    columnid: 223
+}, function (err, data) {
+    console.log(err, data);
+})
+module.exports = app;
