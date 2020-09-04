@@ -1,30 +1,28 @@
 {
-  "name": "learn",
+  "name": "chapter3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/songhua-river/node-learn.git"
+    "bff": "node entry.js",
+    "microservice": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/songhua-river/node-learn/issues"
-  },
-  "homepage": "https://github.com/songhua-river/node-learn#readme",
-  "devDependencies": {
-    "express": "^4.17.1",
-    "glob": "^7.1.6"
-  },
   "dependencies": {
-    "easy_sock": "^0.4.0",
-    "koa": "^2.13.0",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "easy_sock": "^0.3.8",
+    "graphql": "^14.5.8",
+    "koa": "^2.10.0",
+    "koa-graphql": "^0.8.0",
     "koa-mount": "^4.0.0",
     "koa-static": "^5.0.0",
-    "protocol-buffers": "^4.2.0"
+    "protocol-buffers": "^4.1.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   }
 }

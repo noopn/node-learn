@@ -7,7 +7,7 @@ const schemas = protobuf(fs.readFileSync(`${__dirname}/detail.proto`));
 const easySock = new EasySock({ 
     ip: '127.0.0.1',
     port: 4000,
-    timeout: 4000,
+    timeout: 500,
     keepAlive: true
 })
 
